@@ -8,7 +8,6 @@ const initialState = [
     id: 1,
     count: 2,
   },
-
   {
     id: 2,
     count: 3,
@@ -17,23 +16,26 @@ const initialState = [
 
 function App() {
   const [state, setState] = useState(initialState);
-  const totalCount = state.reduce((accumulator, singleState) => {
-    return accumulator + singleState.count;
-  }, 0);
+  const totalCount = state.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.count,
+    0
+  );
   const handleIncrement = (id: number) => {
-    const updateCounter = state.map((singleState) => {
+    const updateState = state.map((singleState) => {
       if (singleState.id === id) {
         return {
           ...singleState,
           count: singleState.count + 1,
         };
       }
-      return { ...singleState };
+      return {
+        ...singleState,
+      };
     });
-    setState(updateCounter)
+    setState(updateState);
   };
-  const handleDecrement = (id:number) => {
-    const updateCounter = state.map((singleState) => {
+  const handleDecrement = (id: number) => {
+    const updateState = state.map((singleState) => {
       if (singleState.id === id) {
         return {
           ...singleState,
@@ -42,7 +44,7 @@ function App() {
       }
       return { ...singleState };
     });
-    setState(updateCounter)
+    setState(updateState);
   };
 
   console.log(totalCount);

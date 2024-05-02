@@ -1,3 +1,6 @@
+import Button from "./Button";
+import Count from "./Count";
+
 type CounterType = {
   id: number;
   handleIncrement: (id: number) => void;
@@ -13,23 +16,23 @@ const Counter = ({
 }: CounterType) => {
   return (
     <div className="text-center my-8 bg-slate-300 w-[50%]  mx-auto p-10">
-      <div className="text-4xl my-5 py-5">
-        count: <span className="font-bold">{count}</span>
-      </div>
-      <div className="counter-btns my-5">
-        <button
-          onClick={() => handleIncrement(id)}
-          className="px-4 py-2 mr-5 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
+      <Count count={count} />
+      <div className="counter-btns my-5 flex justify-center gap-x-5">
+        <Button
+          styles="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
+          handler={() => handleIncrement(id)}
+          id={id}
         >
           Increment
-        </button>
+        </Button>
 
-        <button
-          onClick={() => handleDecrement(id)}
-          className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700"
+        <Button
+          styles="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700"
+          handler={() => handleDecrement(id)}
+          id={id}
         >
-          Increment
-        </button>
+          Decrement
+        </Button>
       </div>
     </div>
   );
