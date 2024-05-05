@@ -1,9 +1,10 @@
-import CounterContainer from "./components/counter/CounterContainer";
+import Counter from "./components/counter2/Counter";
 
 function App() {
   return (
     <>
-      <CounterContainer/>
+      {/* <CounterContainer/> */}
+      <Counter />
     </>
   );
 }
