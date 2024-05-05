@@ -14,7 +14,7 @@ const initialState = [
 ];
 
 const CounterContainer = () => {
-    const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialState);
   const totalCount = state.reduce(
     (accumulator, currentValue) => accumulator + currentValue.count,
     0
