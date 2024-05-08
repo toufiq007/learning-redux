@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       {/* <CounterContainer/> */}
-      <Counter />
+      <Counter newValue={1} id="1" />
     </>
   );
 }
